@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense & Budget Visualizer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- Global Error Banner -->
+    <div id="globalError" class="global-error" role="alert" aria-live="assertive" hidden></div>
+
+    <!-- Header -->
+    <header class="app-header">
+      <h1>💰 Budget Visualizer</h1>
+      <p class="subtitle">Track your spending, stay on budget</p>
+    </header>
+
+    <!-- Balance Card -->
+    <section class="balance-card">
+      <span class="balance-label">Total Spending</span>
+      <span class="balance-amount" id="totalBalance">Rp 0</span>
+    </section>
+
+    <!-- Add Transaction Form -->
+    <section class="form-card">
+      <h2 class="section-title">Add Expense</h2>
+      <form id="transactionForm" novalidate>
+
+        <div class="form-group">
+          <label for="itemName">Item Name</label>
+          <input
+            type="text"
+            id="itemName"
+            placeholder="e.g. Lunch, Grab, Netflix…"
+            autocomplete="off"
+            maxlength="100"
+            required
+          />
+          <span class="error-msg" id="nameError">Please enter an item name.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Amount (Rp)</label>
+          <input
+            type="number"
+            id="amount"
+            placeholder="e.g. 50000"
+            min="0.01"
+            max="999999999.99"
+            step="0.01"
+            required
+          />
+          <span class="error-msg" id="amountError">Please enter a valid amount.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <div class="category-tabs" id="categoryTabs" role="group" aria-label="Category">
+            <button type="button" class="cat-btn active" data-cat="Food">🍔 Food</button>
+            <button type="button" class="cat-btn" data-cat="Transport">🚗 Transport</button>
+            <button type="button" class="cat-btn" data-cat="Fun">🎉 Fun</button>
+          </div>
+          <input type="hidden" id="category" value="Food" />
+        </div>
+
+        <button type="submit" class="btn-add">Add Expense</button>
+      </form>
+    </section>
+
+    <!-- Pie Chart -->
+    <section class="chart-card">
+      <h2 class="section-title">Spending by Category</h2>
+      <div class="chart-container">
+        <canvas id="pieChart" aria-label="Expense pie chart" role="img"></canvas>
+        <p class="chart-empty" id="chartEmpty">No expense data yet.</p>
+      </div>
+    </section>
+
+    <!-- Transaction List -->
+    <section class="list-card">
+      <div class="list-header">
+        <h2 class="section-title">Transactions</h2>
+        <button class="btn-clear" id="clearAllBtn" aria-label="Clear all transactions" disabled>🗑 Clear All</button>
+      </div>
+      <ul class="transaction-list" id="transactionList" aria-live="polite">
+        <li class="empty-state" id="emptyState">No transactions yet. Add one above!</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

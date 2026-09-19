@@ -1,0 +1,385 @@
+/* ============================================================
+   CSS RESET & CUSTOM PROPERTIES
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-bg:        #f0f4f8;
+  --clr-surface:   #ffffff;
+  --clr-primary:   #6c63ff;
+  --clr-primary-d: #5a52e0;
+  --clr-income:    #22c55e;
+  --clr-expense:   #ef4444;
+  --clr-text:      #1e293b;
+  --clr-muted:     #64748b;
+  --clr-border:    #e2e8f0;
+  --clr-danger:    #ef4444;
+
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+
+  --shadow-sm: 0 1px 4px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+
+  --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* category colours */
+  --cat-food:      #f97316;
+  --cat-transport: #3b82f6;
+  --cat-fun:       #a855f7;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* ============================================================
+   LAYOUT WRAPPER
+   ============================================================ */
+.app-wrapper {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.app-header {
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.app-header h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 800;
+  color: var(--clr-primary);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--clr-muted);
+  margin-top: 4px;
+}
+
+/* ============================================================
+   BALANCE CARD
+   ============================================================ */
+.balance-card {
+  background: linear-gradient(135deg, var(--clr-primary) 0%, #8b85ff 100%);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-align: center;
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.balance-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+.balance-amount {
+  font-size: clamp(1.8rem, 7vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* ============================================================
+   CARDS (shared shell)
+   ============================================================ */
+.form-card,
+.chart-card,
+.list-card {
+  background: var(--clr-surface);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--clr-text);
+}
+
+/* ============================================================
+   FORM
+   ============================================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--clr-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: var(--font);
+  color: var(--clr-text);
+  background: var(--clr-bg);
+  transition: border-color .2s, box-shadow .2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 3px rgba(108,99,255,.15);
+  background: #fff;
+}
+
+input.invalid,
+select.invalid {
+  border-color: var(--clr-danger);
+}
+
+.error-msg {
+  font-size: 0.75rem;
+  color: var(--clr-danger);
+  display: none;
+}
+
+.error-msg.visible { display: block; }
+
+/* Category tabs */
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cat-btn {
+  padding: 8px 14px;
+  border: 1.5px solid var(--clr-border);
+  border-radius: 999px;
+  background: var(--clr-bg);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--clr-muted);
+  transition: all .18s;
+}
+
+.cat-btn:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+.cat-btn.active[data-cat="Food"]      { background: var(--cat-food);      border-color: var(--cat-food);      color: #fff; }
+.cat-btn.active[data-cat="Transport"] { background: var(--cat-transport);  border-color: var(--cat-transport); color: #fff; }
+.cat-btn.active[data-cat="Fun"]       { background: var(--cat-fun);        border-color: var(--cat-fun);       color: #fff; }
+/* Add button */
+.btn-add {
+  width: 100%;
+  padding: 13px;
+  background: var(--clr-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+  margin-top: 4px;
+}
+
+.btn-add:hover  { background: var(--clr-primary-d); }
+.btn-add:active { transform: scale(.98); }
+
+/* ============================================================
+   PIE CHART
+   ============================================================ */
+.chart-container {
+  position: relative;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+#pieChart { display: block; }
+
+.chart-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: var(--clr-muted);
+  pointer-events: none;
+}
+
+.chart-empty.hidden { display: none; }
+
+/* ============================================================
+   TRANSACTION LIST
+   ============================================================ */
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.list-header .section-title { margin-bottom: 0; }
+
+.btn-clear {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--clr-danger);
+  background: transparent;
+  border: 1.5px solid var(--clr-danger);
+  border-radius: 999px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background .18s, color .18s;
+}
+
+.btn-clear:hover {
+  background: var(--clr-danger);
+  color: #fff;
+}
+
+.transaction-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--clr-muted);
+  font-size: 0.875rem;
+  padding: 24px 0;
+}
+
+/* Transaction item */
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  transition: box-shadow .18s;
+  animation: slideIn .25s ease;
+}
+
+.transaction-item:hover { box-shadow: var(--shadow-sm); }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Category dot / icon */
+.tx-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.tx-icon[data-cat="Food"]      { background: var(--cat-food); }
+.tx-icon[data-cat="Transport"] { background: var(--cat-transport); }
+.tx-icon[data-cat="Fun"]       { background: var(--cat-fun); }
+
+/* Text block */
+.tx-info { flex: 1; min-width: 0; }
+
+.tx-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tx-meta {
+  font-size: 0.72rem;
+  color: var(--clr-muted);
+  margin-top: 2px;
+}
+
+/* Amount */
+.tx-amount {
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Delete button */
+.btn-delete {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--clr-muted);
+  font-size: 1rem;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .18s, background .18s;
+  flex-shrink: 0;
+}
+
+.btn-delete:hover {
+  color: var(--clr-danger);
+  background: rgba(239,68,68,.1);
+}
+
+/* ============================================================
+   RESPONSIVE — small phones
+   ============================================================ */
+@media (max-width: 360px) {
+  .balance-amount { font-size: 1.8rem; }
+}

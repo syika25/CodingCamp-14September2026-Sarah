@@ -1,0 +1,141 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "2.1 Implement `escapeHTML(str)`": [
+      {
+        "executionId": "ce3243c1-943b-4a23-ae78-8e1aee238bfb",
+        "chatSessionId": "sess_5f675c37-becb-4369-a100-dd66fae542c3",
+        "timestamp": 1789789871667
+      },
+      {
+        "executionId": "ce3243c1-943b-4a23-ae78-8e1aee238bfb",
+        "chatSessionId": "sess_5f675c37-becb-4369-a100-dd66fae542c3",
+        "timestamp": 1789789892635
+      }
+    ],
+    "2.2 Implement `formatRp(amount)`": [
+      {
+        "executionId": "75fef011-8696-4196-a186-86967f2a2204",
+        "chatSessionId": "sess_aca24a1d-caa0-46b5-9868-a7427ac7a44c",
+        "timestamp": 1789790005780
+      },
+      {
+        "executionId": "75fef011-8696-4196-a186-86967f2a2204",
+        "chatSessionId": "sess_aca24a1d-caa0-46b5-9868-a7427ac7a44c",
+        "timestamp": 1789790042204
+      }
+    ],
+    "2. Implement utility functions in `js/script.js`": [
+      {
+        "executionId": "75fef011-8696-4196-a186-86967f2a2204",
+        "chatSessionId": "sess_aca24a1d-caa0-46b5-9868-a7427ac7a44c",
+        "timestamp": 1789790042306
+      }
+    ],
+    "3.1 Implement `loadTransactions()`": [
+      {
+        "executionId": "035e0e2c-dd6b-4f53-94a5-462b313e8a27",
+        "chatSessionId": "sess_7e639143-9af5-4412-bed2-6b1be1fdc502",
+        "timestamp": 1789790099231
+      },
+      {
+        "executionId": "035e0e2c-dd6b-4f53-94a5-462b313e8a27",
+        "chatSessionId": "sess_7e639143-9af5-4412-bed2-6b1be1fdc502",
+        "timestamp": 1789790127853
+      }
+    ],
+    "3.2 Implement `saveTransactions()`": [
+      {
+        "executionId": "09554578-d077-4708-ab85-2d40aa0d3670",
+        "chatSessionId": "sess_07d93390-ab49-440b-a5d5-a29195f7e266",
+        "timestamp": 1789790217261
+      },
+      {
+        "executionId": "09554578-d077-4708-ab85-2d40aa0d3670",
+        "chatSessionId": "sess_07d93390-ab49-440b-a5d5-a29195f7e266",
+        "timestamp": 1789790566437
+      }
+    ],
+    "3. Implement Local Storage helpers in `js/script.js`": [
+      {
+        "executionId": "09554578-d077-4708-ab85-2d40aa0d3670",
+        "chatSessionId": "sess_07d93390-ab49-440b-a5d5-a29195f7e266",
+        "timestamp": 1789790566533
+      }
+    ],
+    "4. Fix state initialisation and DOM references in `js/script.js`": [
+      {
+        "executionId": "beb62a9e-2b1a-4c97-aa19-4391ec84da87",
+        "chatSessionId": "sess_af35bb0d-a3c6-4748-aa3c-ebc3401d61da",
+        "timestamp": 1789790605897
+      },
+      {
+        "executionId": "beb62a9e-2b1a-4c97-aa19-4391ec84da87",
+        "chatSessionId": "sess_af35bb0d-a3c6-4748-aa3c-ebc3401d61da",
+        "timestamp": 1789790676589
+      }
+    ],
+    "5. Implement `renderSummary()` in `js/script.js`": [
+      {
+        "executionId": "a6020d09-31ab-4cff-a1c9-94449ac039e6",
+        "chatSessionId": "sess_c5d85dae-4f64-4154-b7db-63b0b5161480",
+        "timestamp": 1789790757756
+      },
+      {
+        "executionId": "a6020d09-31ab-4cff-a1c9-94449ac039e6",
+        "chatSessionId": "sess_c5d85dae-4f64-4154-b7db-63b0b5161480",
+        "timestamp": 1789790785181
+      }
+    ],
+    "6.1 Implement empty-state handling": [
+      {
+        "executionId": "6abba22a-4cca-41de-a9eb-7876fcb48e99",
+        "chatSessionId": "sess_1e45ab50-efbc-4cfc-85c3-81437383a3d6",
+        "timestamp": 1789790835829
+      },
+      {
+        "executionId": "6abba22a-4cca-41de-a9eb-7876fcb48e99",
+        "chatSessionId": "sess_1e45ab50-efbc-4cfc-85c3-81437383a3d6",
+        "timestamp": 1789790892551
+      }
+    ],
+    "6.2 Implement transaction item rendering": [
+      {
+        "executionId": "6abba22a-4cca-41de-a9eb-7876fcb48e99",
+        "chatSessionId": "sess_1e45ab50-efbc-4cfc-85c3-81437383a3d6",
+        "timestamp": 1789790836334
+      },
+      {
+        "executionId": "6abba22a-4cca-41de-a9eb-7876fcb48e99",
+        "chatSessionId": "sess_1e45ab50-efbc-4cfc-85c3-81437383a3d6",
+        "timestamp": 1789790892891
+      }
+    ],
+    "6. Implement `renderList()` in `js/script.js`": [
+      {
+        "executionId": "6abba22a-4cca-41de-a9eb-7876fcb48e99",
+        "chatSessionId": "sess_1e45ab50-efbc-4cfc-85c3-81437383a3d6",
+        "timestamp": 1789790892966
+      }
+    ],
+    "7.1 Implement Chart.js CDN failure guard": [
+      {
+        "executionId": "ba296e14-d1aa-49f4-8362-ff2b5e1103f0",
+        "chatSessionId": "sess_d3f7d9c0-80f6-432e-b2dc-9c44b5ef4e39",
+        "timestamp": 1789791043272
+      },
+      {
+        "executionId": "ba296e14-d1aa-49f4-8362-ff2b5e1103f0",
+        "chatSessionId": "sess_d3f7d9c0-80f6-432e-b2dc-9c44b5ef4e39",
+        "timestamp": 1789791129714
+      }
+    ],
+    "7.2 Implement chart singleton create/update logic": [
+      {
+        "executionId": "ba296e14-d1aa-49f4-8362-ff2b5e1103f0",
+        "chatSessionId": "sess_d3f7d9c0-80f6-432e-b2dc-9c44b5ef4e39",
+        "timestamp": 1789791043954
+      }
+    ]
+  }
+}
